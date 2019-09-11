@@ -16,14 +16,14 @@ To be determined
 
 ## Use of this repository by members
 
-Members of team 5, here are instructions on how to get started with our repo.
+Members of team 5, here are instructions on how to get started with our repo. (footnote Matthew)
 
 1. Go to https://github.com/flyboy85749/Project1 and copy the clone address
 
-2. Using Terminal or GitBash navigate to the folder where you would like to clone the repository. A list of common commands for Terminal and GitBash are located here.
+2. Using Terminal or GitBash navigate to the folder where you would like to clone the repository. 
 
 
-3. Type the following Git shell command git clone https://github.com/flyboy85749/Project-1.git
+3. Type the following Git shell command "git clone https://github.com/flyboy85749/Project-1.git" (without the quotes)
 
 4. Move to the directory by typing cd Project-1
 
@@ -37,26 +37,30 @@ pwd
 
 The directory you are in should display the branch name at the end of the directory in parentheses (yourName). If the branch says (master) then go back to step 5 and make sure your branch name is correct.
 
-7. (First Pull Only): Once you have set up then type the following code into the terminal git pull origin master and theis should pull the most recent master branch copy of the Project to your local computer. WARNING Never push to the master branch without notifying your team. WARNING
+7. (First Pull Only): Once you have set up then type the following code into the terminal "git pull origin master" and this should pull the most recent master branch copy of the Project to your local computer. WARNING Never push to the master branch without notifying your team. WARNING
 
 8. Launch project in VS Code by typing the following 
 
 code .
-
+*********************************************************************************
 
 **Terminal / GitBash
 
 pwd : Lists the directory you are in. Including (master) (yourBranch) tags within git directories.
 
-cd : Change Direcory. *example: cd ~* will take you to the user root directory.
+cd : Change Directory. cd . (cd space .)
+
+*cd ~* will take you to the user root directory.
 
 ls : Lists all content in the directory.
 
 ls -a : Will list hidden folders and files. Use this to make sure /git is inside your Project-1 Folder. Without it you will not be able to use git commands.
 
-touch : Create new files
+touch : Create new files. 
 
-mkdir : Makes a new directory in the folder you are currently in. use pwd if you do not know what folder you are in.
+*example* touch index.html about.html will create two files at the same time
+
+mkdir : Makes a new directory in the folder you are currently in. use pwd if you don't know what folder you are in.
 
 Git
 
@@ -104,7 +108,7 @@ Requirements
     Meet good quality coding standards (indentation, scoping, naming, etc.)
     Do not use alerts, confirms, of prompts (modals).
     Incorporate some sort of repeating element (table, colums, etc.)
-    Use a CSS framework.
+    Use a CSS framework. <a href="https://getbootstrap.com/">Bootstrap</a>
     Deploy your site to GitHub Pages.
     Include user input validation.
 
