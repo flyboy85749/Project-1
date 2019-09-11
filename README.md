@@ -62,7 +62,7 @@ touch : Create new files.
 
 mkdir : Makes a new directory in the folder you are currently in. use pwd if you don't know what folder you are in.
 
-Git
+## Git
 
 git checkout yourBranch : This will assign your push and pull requests to your branch. If you need to pull from master see the following section about git pull origin. If you need to assign yourself to master type the following git checkout master.
 
@@ -86,8 +86,8 @@ git status : Should be used a second time after pushing content to ensure there 
     to the master branch. Review conflicts together or assign them via the `Projects task` box within 
     the project board on github. *Ignore this if project is forked*
 
-Files
-
+## Files
+```
 Project-1 Folder
     > assets
         > css
@@ -98,8 +98,9 @@ Project-1 Folder
         > images
     * index.html
     * README.md
+```
 
-Requirements
+## Requirements
 
     Use at least two API's
     Use AJAX to pull data
