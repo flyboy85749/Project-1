@@ -9,10 +9,9 @@ $(document).ready(function () {
         // it as if it was nothing so preselected will be just "".
 
         var searchTerm = $(this).val();
-        var minCal = $(this).val();
         var maxCal = $(this).val();
 
-        var foodInfo = `https://api.nutritionix.com/v1_1/search/${preselectedTerm}${searchTerm}?results=0%3A20&cal_min=${minCal}&cal_max=${maxCal}&fields=item_name%2Cbrand_name%2Citem_id%2Cbrand_id&appId=a2063711&appKey=32128ae3fa96a649e37745b8a692a95e`
+        var foodInfo = `https://api.nutritionix.com/v1_1/search/${preselectedTerm}${searchTerm}?results=0%3A20&cal_min=0&cal_max=${maxCal}&fields=item_name%2Cbrand_name%2Citem_id%2Cbrand_id&appId=a2063711&appKey=32128ae3fa96a649e37745b8a692a95e`
         $.ajax({
             url: foodInfo,
             method: "GET"
@@ -44,12 +43,13 @@ $(document).ready(function () {
                     var NewFoodName = $("<p>").text("Store Name:" + response.hits[i].fields.item_name);
 
                     // pulls the id of the food above
-                    var foodID = response.hits[i].id;
+                    var moreInfoButt = $("<button>");
+                    moreInfoButt.attr("data-foodNumber",response.hits[i].id);
 
                     // appending the info of our info into the new div then appends the div into our "list"
                     newResult.append(newStoreName);
                     newResult.append(NewFoodName);
-
+                    newResult.append(moreInfoButt);
                     searchResults.append(newResult);
                 };
             });
@@ -71,36 +71,10 @@ $(document).ready(function () {
             url: foodInfo,
             method: "GET"
         })
+
     }
 
-    $(document).on("click", ".foodOption", detailedFoodInfo)
-
-    // preset buttons
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    $(document).on("click", ".moreInfoButton", detailedFoodInfo)
 
 
 });
