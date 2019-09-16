@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+
     // this is what will pull all our results for the searched food term
 
     function generalFoodInfo() {
@@ -86,3 +87,50 @@ $(document).ready(function () {
                 // 3. from that list we need to pull the foods id item so it can be placed in the next api call
                 // 4. the selected item we need to pull the id from it and make another call to the site so that it pulls up the nutritional information of the food they selected
                 // 5.
+=======
+    var topic = $(this).attr("data-name");
+    // this is what will set all our apis to look for the same topic
+    function apiRequests() {
+
+        // var imageUrl = ;
+        var videoUrl =  `https://www.googleapis.com/youtube/v3/videos?part=${topic}&key=AIzaSyArWUdiSCGt0-Toxm27eYf5fKkpNJt-knk`
+        var gifUrl = `https://api.giphy.com/v1/gifs/search?q=${topic}&api_key=Bbxmt6xBVvmP9bqdHENileHHwSLJvr2K`;
+
+    }
+    $.ajax({
+        coolGif: gifUrl,
+        method: "GET"
+    })
+    // this will be the on click to input user search term into our api's
+    // $(document).on("click", ".userInput", displaypic/vid/gif);
+
+    $(document).on("click", ".preMadeSearch", displaypic / vid / gif);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
