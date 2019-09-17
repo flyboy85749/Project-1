@@ -15,7 +15,10 @@
   <!-- favicon -->
 
 
-  <!-- title -->
+  <!-- Pure.css new library to try -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
+    integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+
 
 </head>
 
@@ -67,22 +70,22 @@
             <option value="4">Keto Friendly</option>
           </select> -->
           <div class="w-25 p-3" style="">
-          <label for="customRange3" class="text-white bg-success">Calorie Range</label>
-          <input type="range" class="custom-range" min="100" max="5000" step="0.5" id="customRange3">
-        </div>
+            <label for="customRange3" class="text-white bg-success">Calorie Range</label>
+            <input type="range" class="custom-range" min="100" max="5000" step="0.5" id="customRange3">
+          </div>
 
           <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-              <option selected>Choose...</option>
-              <option value="1">Gluten Free</option>
-              <option value="2">Vegan</option>
-              <option value="3">Nut Free</option>
-              <option value="4">Keto Friendly</option>
-            </select>
+            <option selected>Choose...</option>
+            <option value="1">Gluten Free</option>
+            <option value="2">Vegan</option>
+            <option value="3">Nut Free</option>
+            <option value="4">Keto Friendly</option>
+          </select>
           <label class="sr-only" for="inlineFormInputName2">Food</label>
           <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Food">
 
           <!-- need to make zip code text field 25% width -->
-          <label class="sr-only"  for="inlineFormInputGroupUsername2">zip code</label>
+          <label class="sr-only" for="inlineFormInputGroupUsername2">zip code</label>
           <div class="input-group mb-2 mr-sm-2">
             <!-- <div class="input-group-prepend">
                   <div class="input-group-text"></div>
@@ -97,7 +100,7 @@
                 </label>
               </div> -->
 
-          <button type="search" class="btn btn-success mb-2">Search</button>
+          <button type="search"  class="btn btn-success pure-button mb-2"><i class="fa fa-utensils"></i>Search</button>
         </form>
       </div>
     </nav>
