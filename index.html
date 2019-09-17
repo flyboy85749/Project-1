@@ -7,6 +7,8 @@
   <!-- jquery -->
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
+  <!-- reset css-->
+  <link rel="stylesheet" href="assets/css/reset.css">
 
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -69,18 +71,19 @@
             <option value="3">Nut Free</option>
             <option value="4">Keto Friendly</option>
           </select> -->
-          <div class="w-25 p-3" style="">
-            <label for="customRange3" class="text-white bg-success">Calorie Range</label>
-            <input type="range" class="custom-range" min="100" max="5000" step="0.5" id="customRange3">
-          </div>
+          <div class="w-25 p-3">
+          <label for="customRange3" class="text-white bg-success">Calorie Range</label>
+          <input type="range" class="custom-range" min="100" max="5000" step="0.5" id="customRange3">
+        </div>
 
-          <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-            <option selected>Choose...</option>
-            <option value="1">Gluten Free</option>
-            <option value="2">Vegan</option>
-            <option value="3">Nut Free</option>
-            <option value="4">Keto Friendly</option>
-          </select>
+          <select class="diet my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+              <option selected>Choose...</option>
+              <option value="Gluten Free">Gluten Free</option>
+              <option value="Vegan">Vegan</option>
+              <option value="Nut Free">Nut Free</option>
+              <option value="Keto Friendly">Keto Friendly</option>
+            </select>
+
           <label class="sr-only" for="inlineFormInputName2">Food</label>
           <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Food">
 
