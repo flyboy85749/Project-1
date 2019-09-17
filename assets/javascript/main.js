@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-
     // this is what will pull all our results for the searched food term
 
     function generalFoodInfo() {
@@ -41,11 +40,13 @@ $(document).ready(function () {
                     var newStoreName = $("<p>").text("Store Name:" + response.hits[i].fields.brand_name);
 
                     // pulls the name of the food they sell
-                    var NewFoodName = $("<p>").text("Store Name:" + response.hits[i].fields.item_name);
+                    var NewFoodName = $("<p>").text("Food Name:" + response.hits[i].fields.item_name);
 
                     // pulls the id of the food above
                     var moreInfoButt = $("<button>");
-                    moreInfoButt.attr("data-foodNumber",response.hits[i].id);
+                    moreInfoButt.attr("data-foodNumber", response.hits[i].id);
+                    moreInfoButt.attr("data-toggle", modal)
+                    moreInfoButt.attr("data-target")
 
                     // appending the info of our info into the new div then appends the div into our "list"
                     newResult.append(newStoreName);
@@ -55,8 +56,7 @@ $(document).ready(function () {
                 };
             });
     }
-    // after this call append the information onto website and generate a button for it
-    // then when the button is pushed call this second api
+
 
     // this will be the on click to input user search term into our api's
 
@@ -72,6 +72,21 @@ $(document).ready(function () {
             url: foodInfo,
             method: "GET"
         })
+        // how i think we can call the specific info form our information
+        var calories = response.nf_calories;
+        var protein = response.nf_protein;
+        var sugar = response.nf_sugars;
+        var fat = response.nf_total_fat;
+        var sodium = response.nf_sodium;
+        var modalInfo = "";
+        // then we apply the information as text to show up in our modal
+
+        modalInfo.append($("<p>").text(`Amount of Calories${calories}`));
+        modalInfo.append($("<p>").text(`Amount of Protein${protein}`));
+        modalInfo.append($("<p>").text(`Amount of Sugars${sugar}`));
+        modalInfo.append($("<p>").text(`Amount of Fat${fat}`));
+        modalInfo.append($("<p>").text(`Amount of Sodium${sodium}`));
+
 
     }
 
@@ -87,50 +102,3 @@ $(document).ready(function () {
                 // 3. from that list we need to pull the foods id item so it can be placed in the next api call
                 // 4. the selected item we need to pull the id from it and make another call to the site so that it pulls up the nutritional information of the food they selected
                 // 5.
-=======
-    var topic = $(this).attr("data-name");
-    // this is what will set all our apis to look for the same topic
-    function apiRequests() {
-
-        // var imageUrl = ;
-        var videoUrl =  `https://www.googleapis.com/youtube/v3/videos?part=${topic}&key=AIzaSyArWUdiSCGt0-Toxm27eYf5fKkpNJt-knk`
-        var gifUrl = `https://api.giphy.com/v1/gifs/search?q=${topic}&api_key=Bbxmt6xBVvmP9bqdHENileHHwSLJvr2K`;
-
-    }
-    $.ajax({
-        coolGif: gifUrl,
-        method: "GET"
-    })
-    // this will be the on click to input user search term into our api's
-    // $(document).on("click", ".userInput", displaypic/vid/gif);
-
-    $(document).on("click", ".preMadeSearch", displaypic / vid / gif);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-});

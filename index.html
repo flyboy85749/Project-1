@@ -17,7 +17,10 @@
   <!-- favicon -->
 
 
-  <!-- title -->
+  <!-- Pure.css new library to try -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
+    integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+
 
 </head>
 
@@ -80,11 +83,12 @@
               <option value="Nut Free">Nut Free</option>
               <option value="Keto Friendly">Keto Friendly</option>
             </select>
+
           <label class="sr-only" for="inlineFormInputName2">Food</label>
           <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Food">
 
           <!-- need to make zip code text field 25% width -->
-          <label class="sr-only"  for="inlineFormInputGroupUsername2">zip code</label>
+          <label class="sr-only" for="inlineFormInputGroupUsername2">zip code</label>
           <div class="input-group mb-2 mr-sm-2">
             <!-- <div class="input-group-prepend">
                   <div class="input-group-text"></div>
@@ -99,7 +103,7 @@
                 </label>
               </div> -->
 
-          <button type="search" class="btn btn-success mb-2">Search</button>
+          <button type="search"  class="btn btn-success pure-button mb-2"><i class="fa fa-utensils"></i>Search</button>
         </form>
       </div>
     </nav>
