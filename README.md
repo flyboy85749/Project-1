@@ -4,21 +4,21 @@ This our first team project for team5. Members include John, Isaac, Bill, and Eb
 
 ## Project 1 Theme
 
-To be determined
+The project 1 theme is foodie related.
 
 ## Project 1 Purpose
 
-To be determined
+To allow users to search for restaurants in their area, based on various diet restrictions.
 
 ## Project 1 Official Name
 
-To be determined
+Famished Food
 
 ## Use of this repository by members
 
 Members of team 5, here are instructions on how to get started with our repo. (footnote Matthew)
 
-1. Go to https://github.com/flyboy85749/Project1 and copy the clone address
+1. Go to https://github.com/flyboy85749/Project-1 and copy the clone address
 
 2. Using Terminal or GitBash navigate to the folder where you would like to clone the repository. 
 
