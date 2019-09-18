@@ -7,6 +7,9 @@
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    
+    <!-- reset css link, so site looks same across browsers -->
+    <link rel="stylesheet" href="assets/css/reset.css">
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -76,7 +79,7 @@
             <!-- Title -->
             <h2 class="white-text card-title h2">Welcome to Famished!</h2>
             <!-- Subtitle -->
-            <p class="white-text my-4 font-weight-bold">Your desitination for food you prefer</p>
+            <p class="white-text my-4 font-weight-bold">Your destination for food you prefer</p>
 
             <!-- Grid row -->
             <div class="row d-flex justify-content-center">
@@ -124,7 +127,7 @@
 
                 <div class="col-lg-10 mx-auto">
                     <h2>Food Filter</h2>
-                    <p class="lead mb-5">Pick out your food prefences here!</p>
+                    <p class="lead mb-5">Pick out your food preferences here!</p>
                 </div>
 
                 <div class="card-body px-lg-5 pt-0">
@@ -141,7 +144,7 @@
                                 <option value="Nut Free">Nut Free</option>
                                 <option value="Vegan">Vegan</option>
                                 <option value="Keto">Keto</option>
-                                <option value="Keto">Dairy Free</option>
+                                <option value="Dairy Free">Dairy Free</option>
                             </select>
 
                         </div>
@@ -156,6 +159,20 @@
                             <input type="range" class="custom-range w-25" min="100" max="5000" step="0.5"
                                 id="myRange" />
                             <p class="demo">Up to: <span id="demo"></span> calories</p>
+                            
+                            <script type="text/javascript">
+                               // put script inline to test
+
+                                // first, we have the calorie range slider to work with
+                                var slider = document.getElementById('myRange')
+                                 var output = document.getElementById('demo')
+                                output.innerHTML = slider.value
+
+                                slider.oninput = function() {
+                                output.innerHTML = this.value
+                                console.log(this.value) // this works!
+                             }
+                            </script>
 
                             <label for="input"></label>
                             <input type="text" id="input" class="form-control w-25" placeholder="Zip Code">
