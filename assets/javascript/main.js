@@ -3,13 +3,13 @@ $(document).ready(function () {
     // this is what will pull all our results for the searched food term
 
     function generalFoodInfo() {
-        var preselectedTerm = $(this).val();
+        var preselectedTerm = $('#dropDown :selected').val();
 
         // need an if statment for our preselected term that if the value is set to something like "choose option" it returns
         // it as if it was nothing so preselected will be just "".
 
-        var searchTerm = $(this).val();
-        var maxCal = $(this).val();
+        var searchTerm = $("#food").val();
+        var maxCal = $("#MaXCal").val();
 
         var foodInfo = `https://api.nutritionix.com/v1_1/search/${preselectedTerm}${searchTerm}?results=0%3A20&cal_min=0&cal_max=${maxCal}&fields=item_name%2Cbrand_name%2Citem_id%2Cbrand_id&appId=a2063711&appKey=32128ae3fa96a649e37745b8a692a95e`
         $.ajax({
@@ -25,11 +25,11 @@ $(document).ready(function () {
                 if (response.pagination.total_count == 0) {
 
                     // mandol or whatever to be put here saying sorry no results
-
-                    var itemindex = topics.indexOf(topic);
-                    if (itemindex > -1) {
-                        topics.splice(itemindex, 1);
-                    };
+                    var noResultsModal = $("<div>");
+                    $("<div>").addClass("modal");
+                    var noResultsText = $("<p>").text("Sorry theres no results for your search so time to go to White Castle Harold!");
+                    noResultsModal.append(noResultsText);
+                    $(".modal").modal({show: true});
                 }
                 for (let i = 0; i < response.hits.length; i++) {
 
