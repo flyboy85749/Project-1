@@ -25,11 +25,11 @@ $(document).ready(function () {
                 if (response.pagination.total_count == 0) {
 
                     // mandol or whatever to be put here saying sorry no results
-
-                    var itemindex = topics.indexOf(topic);
-                    if (itemindex > -1) {
-                        topics.splice(itemindex, 1);
-                    };
+                    var noResultsModal = $("<div>");
+                    $("<div>").addClass("modal");
+                    var noResultsText = $("<p>").text("Sorry theres no results for your search so time to go to White Castle Harold!");
+                    noResultsModal.append(noResultsText);
+                    $(".modal").modal({show: true});
                 }
                 for (let i = 0; i < response.hits.length; i++) {
 
