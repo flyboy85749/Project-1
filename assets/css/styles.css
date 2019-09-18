@@ -7,6 +7,10 @@ body {
     -o-background-size: cover;
   }
 
+ #input {
+    margin-left: 350px ;
+ }
+
 
   .map-container-5{
     overflow:hidden;
