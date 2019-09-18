@@ -14,8 +14,11 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
   <!-- favicon -->
   <link rel="shortcut icon" type="image/png" href="assets/images/cute cherries.png">
+   
 
   <!-- Pure.css new library to try -->
   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
@@ -23,61 +26,49 @@
 
   <!-- font awesome link to display icon in the search button -->
   <script src="https://kit.fontawesome.com/65129cc130.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
 <meta name="google-site-verification" content="eCraO6NNGMDX_-lsnWdZmkn-n1OC7-s0eVkhjw8L5rU" />
   
   <!-- script to load google maps javascript API -->
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key= AIzaSyBHJoUICa4QltXCnuuyI92Q9RXeJUzUJ4M&callback=initMap">
 </script>
+
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#navbar-example">
 
-  <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   <div class="container"> 
+    <!-- navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded-bottom">
       <!-- add id to href to name of app -->
-      <a class="navbar-brand" href="#">Pure Fuel</a>
+      <a class="navbar-brand" href="#">Famished</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- may move search form for food prefrence -->
-      <!-- <form class="form-inline my-2 my-lg-0"> -->
-      <!-- <input class="form-control mr-sm-2" type="search" placeholder="Food" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form> -->
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- <ul class="navbar-nav mr-auto">
-            
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                < need to add id to href dropdown link -->
-        <!-- <a class="dropdown-item" href="#">Gluten Free</a>
-                <a class="dropdown-item" href="#">Vegan</a>
-                <a class="dropdown-item" href="#">Keto Friendly</a>
-                <div class="dropdown-divider"></div> -->
-        <!-- <a class="dropdown-item" href="#">Other</a> -->
-        <!-- </div>
-            </li>
-            
-          </ul> -->
-        <!-- <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Zip Code" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form> -->
+
         <form class="form-inline">
-          <!-- <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Preference</label> -->
-          <!-- need to figure out how to have selected option link to search -->
-          <!-- <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-            <option selected>Choose...</option>
-            <option value="1">Gluten Free</option>
-            <option value="2">Vegan</option>
-            <option value="3">Nut Free</option>
-            <option value="4">Keto Friendly</option>
-          </select> -->
+
+          <!-- Calorie Counter -->
+            <div class="d-flex justify-content-center my-4">
+                <!-- <label for="customRange3" class="text-white bg-dark">Calorie Range</label> -->
+                <span class="font-weight-bold indigo-text mr-2 mt-1">100</span>
+                <form class="range-field w-25">
+                  <input class="border-0" type="range" min="100" max="5000" />
+                </form>
+                <span class="font-weight-bold indigo-text ml-2 mt-1">5000</span>
+              </div>
+          
+
+          <!-- Food custom search bar -->
+
           <div class="w-25 p-3">
           <label for="customRange3" class="text-white bg-success">Calorie Range</label>
           <input type="range" class="custom-range" min="100" max="5000" step="0.5" id="customRange3">
@@ -103,22 +94,61 @@
             <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Zip Code">
           </div>
 
-          <!-- <div class="form-check mb-2 mr-sm-2">
-                <input class="form-check-input" type="checkbox" id="inlineFormCheck">
-                <label class="form-check-label" for="inlineFormCheck">
-                  Remember me
-                </label>
-              </div> -->
+
 
           <button type="search" class="btn btn-success pure-button mb-2"><i class="fa fa-utensils"></i>Search</button>
         </form>
       </div>
     </nav>
+  </div> 
+
+  <!-- main content of page -->
+  <div class="container">
+    <div class="card border-0 shadow my-5">
+      <div class="card-body p-5">
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Panel title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+          <!--Card-->
+          <div class="card card-cascade narrower">
+            <!--Card image-->
+            <div class="view view-cascade gradient-card-header peach-gradient">
+              <h5 class="mb-0">Custom map</h5>
+            </div>
+            <!--Card content-->
+            <div class="card-body card-body-cascade text-center">
+              <!--Google map-->
+              <div id="map-container-google-9" class="z-depth-1-half map-container-5" style="height: 300px">
+                <iframe src="https://maps.google.com/maps?q=Madryt&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                  style="border:0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+
+          <div style="height: 700px"></div>
+
+          <p class="lead mb-0"></p>
+        </div>
+      </div>
+    </div>
 
 
-
-
-
+    <!-- footer -->
+    <footer id="sticky-footer" class="py-4 bg-dark text-white-50 rounded-top">
+      <div class="container text-center">
+        <small>Copyright &copy; Famished</small>
+      </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.9.7/d3.min.js"></script>
+    <script src="assets/javascript/main.js" type="text/javascript"></script>
+</body>
+=======
 
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.9.7/d3.min.js"></script>
