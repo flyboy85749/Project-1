@@ -2,14 +2,15 @@ $(document).ready(function () {
 
     // this is what will pull all our results for the searched food term
 
-    function generalFoodInfo() {
-        var preselectedTerm = $(this).val();
+    function generalFoodInfo(event) {
+        event.preventDefault();
+        var preselectedTerm = $('#select').val();
 
         // need an if statment for our preselected term that if the value is set to something like "choose option" it returns
         // it as if it was nothing so preselected will be just "".
 
-        var searchTerm = $(this).val();
-        var maxCal = $(this).val();
+        var searchTerm = $('#input').val();
+        var maxCal = $('#myRange').val();
 
         var foodInfo = `https://api.nutritionix.com/v1_1/search/${preselectedTerm}${searchTerm}?results=0%3A20&cal_min=0&cal_max=${maxCal}&fields=item_name%2Cbrand_name%2Citem_id%2Cbrand_id&appId=a2063711&appKey=32128ae3fa96a649e37745b8a692a95e`
         $.ajax({
@@ -22,19 +23,19 @@ $(document).ready(function () {
             .then(function (response) {
                 console.log(response);
                 console.log(response.hits.length)
-                if (response.pagination.total_count == 0) {
+                // if (response.pagination.total_count == 0) {
 
-                    // mandol or whatever to be put here saying sorry no results
+                //     // mandol or whatever to be put here saying sorry no results
 
-                    var itemindex = topics.indexOf(topic);
-                    if (itemindex > -1) {
-                        topics.splice(itemindex, 1);
-                    };
-                }
+                //     var itemindex = topics.indexOf(topic);
+                //     if (itemindex > -1) {
+                //         topics.splice(itemindex, 1);
+                //     };
+                // }
                 for (let i = 0; i < response.hits.length; i++) {
-
+                    console.log(i);
                     // this make a new div to store our information
-                    var newResult = $("<div id='food'>");
+                    var newResult = $("<div>");
 
                     // pulls the name of the store
                     var newStoreName = $("<p>").text("Store Name:" + response.hits[i].fields.brand_name);
@@ -45,14 +46,15 @@ $(document).ready(function () {
                     // pulls the id of the food above
                     var moreInfoButt = $("<button>");
                     moreInfoButt.attr("data-foodNumber", response.hits[i].id);
-                    moreInfoButt.attr("data-toggle", modal)
+                    // moreInfoButt.attr("data-toggle", modal)
                     moreInfoButt.attr("data-target")
 
                     // appending the info of our info into the new div then appends the div into our "list"
                     newResult.append(newStoreName);
                     newResult.append(NewFoodName);
                     newResult.append(moreInfoButt);
-                    searchResults.append(newResult);
+                    
+                    $('#foo').append(newResult);
                 };
             });
     }
@@ -60,7 +62,7 @@ $(document).ready(function () {
 
     // this will be the on click to input user search term into our api's
 
-    $(document).on("click", ".searchTerm", generalFoodInfo)
+    $(document).on("click", "#searchButton", generalFoodInfo)
 
     // function so that when a user clicks on a food it will pull more info for them to see it
     function detailedFoodInfo() {
