@@ -1,28 +1,28 @@
 /* Set a background image by replacing the URL below */
 body {
-    background: url('https://format-com-cld-res.cloudinary.com/image/private/s--JhgW_Bvj--/c_limit,g_center,h_550,w_65535/a_auto,fl_keep_iptc.progressive,q_95/v1/594f8cc17459e148d2ac05a4cabef789/_TSB2145.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+  background: url('https://format-com-cld-res.cloudinary.com/image/private/s--JhgW_Bvj--/c_limit,g_center,h_550,w_65535/a_auto,fl_keep_iptc.progressive,q_95/v1/594f8cc17459e148d2ac05a4cabef789/_TSB2145.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+#input{
+  margin-left: 400px ;
+}
+
+
+.map-container-5{
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
+  }
+  .map-container-5 iframe{
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
   }
 
- #input {
-    margin-left: 400px ;
- }
-
-
-  .map-container-5{
-    overflow:hidden;
-    padding-bottom:56.25%;
-    position:relative;
-    height:0;
-    }
-    .map-container-5 iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
-    }
-    
