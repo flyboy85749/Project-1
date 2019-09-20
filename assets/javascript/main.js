@@ -89,7 +89,15 @@ console.log("i am alive")
 
     // $(document).on("click", ".moreInfoButton", detailedFoodInfo)
 
+// first, we have the calorie range slider to work with
+      var slider = document.getElementById('myRange')
+      var output = document.getElementById('demo')
+      output.innerHTML = slider.value
 
+      slider.oninput = function() {
+        output.innerHTML = this.value
+        console.log(this.value) // this works!
+      }
 });
 
 // psuedo zone
