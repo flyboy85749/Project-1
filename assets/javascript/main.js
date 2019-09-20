@@ -1,6 +1,7 @@
 $(document).ready(function () {
 console.log("i am alive")
     // this is what will pull all our results for the searched food term
+
     console.log("hello")
     function generalFoodInfo() {
         var preselectedTerm = $("#select").val();
@@ -22,19 +23,21 @@ console.log("i am alive")
 
             .then(function (response) {
                 console.log(response);
-                if (response.pagination.total_count == 0) {
+                console.log(response.hits.length)
+                // if (response.pagination.total_count == 0) {
 
-                    // mandol or whatever to be put here saying sorry no results
 
-                    var itemindex = topics.indexOf(topic);
-                    if (itemindex > -1) {
-                        topics.splice(itemindex, 1);
-                    };
-                }
+                //     // mandol or whatever to be put here saying sorry no results
+
+                //     var itemindex = topics.indexOf(topic);
+                //     if (itemindex > -1) {
+                //         topics.splice(itemindex, 1);
+                //     };
+                // }
                 for (let i = 0; i < response.hits.length; i++) {
-
+                    console.log(i);
                     // this make a new div to store our information
-                    var newResult = $("<div id='food'>");
+                    var newResult = $("<div>");
 
                     // pulls the name of the store
                     var newStoreName = $("<p>").text("Store Name:" + response.hits[i].fields.brand_name);
@@ -44,13 +47,18 @@ console.log("i am alive")
 
                     // pulls the id of the food above
                     var moreInfoButt = $("<button>");
-                    moreInfoButt.attr("data-foodNumber", response.hits[i]._id);
-                    moreInfoButt.attr("data-toggle", modal)
+
+                    moreInfoButt.attr("data-foodNumber", response.hits[i].id);
+                    // moreInfoButt.attr("data-toggle", modal)
                     moreInfoButt.attr("data-target")
 
                     // appending the info of our info into the new div then appends the div into our "list"
-                    newResult.append(newStoreName, NewFoodName, moreInfoButt);
-                    $("#return").append(newResult);
+                    newResult.append(newStoreName);
+                    newResult.append(NewFoodName);
+                    newResult.append(moreInfoButt);
+                    
+                    $('#foo').append(newResult);
+
                 };
             });
     }
