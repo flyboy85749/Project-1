@@ -1,29 +1,31 @@
 $(document).ready(function () {
-
+console.log("i am alive")
     // this is what will pull all our results for the searched food term
 
-    function generalFoodInfo(event) {
-        event.preventDefault();
-        var preselectedTerm = $('#select').val();
+    console.log("hello")
+    function generalFoodInfo() {
+        var preselectedTerm = $("#select").val();
 
         // need an if statment for our preselected term that if the value is set to something like "choose option" it returns
-        // it as if it was nothing so preselected will be just "".
+        // it as if it was nothing so preselected will be just ""
 
-        var searchTerm = $('#input').val();
-        var maxCal = $('#myRange').val();
+        var searchTerm = $("#input").val();
+        var maxCal = $("#myRange").val();
 
         var foodInfo = `https://api.nutritionix.com/v1_1/search/${preselectedTerm}${searchTerm}?results=0%3A20&cal_min=0&cal_max=${maxCal}&fields=item_name%2Cbrand_name%2Citem_id%2Cbrand_id&appId=a2063711&appKey=32128ae3fa96a649e37745b8a692a95e`
+        console.log("im here");
+
         $.ajax({
             url: foodInfo,
             method: "GET"
         })
-
             // this should be the call to take our information and let it be seperated into store/food name/ and grab the id of the thing
 
             .then(function (response) {
                 console.log(response);
                 console.log(response.hits.length)
                 // if (response.pagination.total_count == 0) {
+
 
                 //     // mandol or whatever to be put here saying sorry no results
 
@@ -45,6 +47,7 @@ $(document).ready(function () {
 
                     // pulls the id of the food above
                     var moreInfoButt = $("<button>");
+
                     moreInfoButt.attr("data-foodNumber", response.hits[i].id);
                     // moreInfoButt.attr("data-toggle", modal)
                     moreInfoButt.attr("data-target")
@@ -55,46 +58,54 @@ $(document).ready(function () {
                     newResult.append(moreInfoButt);
                     
                     $('#foo').append(newResult);
+
                 };
             });
     }
 
-
     // this will be the on click to input user search term into our api's
 
-    $(document).on("click", "#searchButton", generalFoodInfo)
-
+    $(document).on("click", "#searchButt", generalFoodInfo)
+    console.log(generalFoodInfo);
     // function so that when a user clicks on a food it will pull more info for them to see it
-    function detailedFoodInfo() {
+    // function detailedFoodInfo() {
 
-        var selectedFood = $(this).val();
+    //     var selectedFood = $(this).val();
 
-        var foodInfo = `https://api.nutritionix.com/v1_1/item?id=${selectedFood}&appId=a2063711&appKey=32128ae3fa96a649e37745b8a692a95e`
-        $.ajax({
-            url: foodInfo,
-            method: "GET"
-        })
-        // how i think we can call the specific info form our information
-        var calories = response.nf_calories;
-        var protein = response.nf_protein;
-        var sugar = response.nf_sugars;
-        var fat = response.nf_total_fat;
-        var sodium = response.nf_sodium;
-        var modalInfo = "";
-        // then we apply the information as text to show up in our modal
+    //     var foodInfo = `https://api.nutritionix.com/v1_1/item?id=${selectedFood}&appId=a2063711&appKey=32128ae3fa96a649e37745b8a692a95e`
+    //     $.ajax({
+    //         url: foodInfo,
+    //         method: "GET"
+    //     })
+    //     // how i think we can call the specific info form our information
+    //     var calories = response.nf_calories;
+    //     var protein = response.nf_protein;
+    //     var sugar = response.nf_sugars;
+    //     var fat = response.nf_total_fat;
+    //     var sodium = response.nf_sodium;
+    //     var modalInfo = "";
+    //     // then we apply the information as text to show up in our modal
 
-        modalInfo.append($("<p>").text(`Amount of Calories${calories}`));
-        modalInfo.append($("<p>").text(`Amount of Protein${protein}`));
-        modalInfo.append($("<p>").text(`Amount of Sugars${sugar}`));
-        modalInfo.append($("<p>").text(`Amount of Fat${fat}`));
-        modalInfo.append($("<p>").text(`Amount of Sodium${sodium}`));
-
-
-    }
-
-    $(document).on("click", ".moreInfoButton", detailedFoodInfo)
+    //     modalInfo.append($("<p>").text(`Amount of Calories${calories}`));
+    //     modalInfo.append($("<p>").text(`Amount of Protein${protein}`));
+    //     modalInfo.append($("<p>").text(`Amount of Sugars${sugar}`));
+    //     modalInfo.append($("<p>").text(`Amount of Fat${fat}`));
+    //     modalInfo.append($("<p>").text(`Amount of Sodium${sodium}`));
 
 
+    // }
+
+    // $(document).on("click", ".moreInfoButton", detailedFoodInfo)
+
+// first, we have the calorie range slider to work with
+      var slider = document.getElementById('myRange')
+      var output = document.getElementById('demo')
+      output.innerHTML = slider.value
+
+      slider.oninput = function() {
+        output.innerHTML = this.value
+        console.log(this.value) // this works!
+      }
 });
 
 // psuedo zone
