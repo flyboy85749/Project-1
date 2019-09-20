@@ -42,6 +42,9 @@
 
 <body>
 
+    <!-- navbar -->
+
+    <!-- navbar name of site also home button -->
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
         <div class="container">
             <a class="navbar-brand white-text" href="#">Famished</a>
@@ -49,7 +52,9 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- navbar name of site also home button -->
 
+            <!-- navbar menu dropdown on right side -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown">
@@ -57,12 +62,16 @@
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Menu
                         </a>
-                        <!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
+                        <!-- navbar menu dropdown on right side -->
+
+                        <!-- dropdown items in menu-->
                         <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Home</a>
                             <a class="dropdown-item" href="#">Food Filter</a>
                             <a class="dropdown-item" href="#">Locations</a>
                             <div class="dropdown-divider"></div>
+                            <!-- dropdown items in menu-->
+
                             <!-- May want to add a 'Favorites option' -->
                             <!-- <a class="dropdown-item" href="#">Favorites</a> -->
                         </div>
@@ -71,12 +80,14 @@
             </div>
         </div>
     </nav>
+    <!-- navbar -->
 
     <div class="container text-center">
+
         <!-- Jumbotron -->
         <div class="jumbotron text-center bg-transparent" id="home">
 
-            <!-- Title -->
+            <!-- Title of page -->
             <h2 class="white-text card-title h2">Welcome to Famished!</h2>
             <!-- Subtitle -->
             <p class="white-text my-4 font-weight-bold">Your destination for food you prefer</p>
@@ -84,29 +95,34 @@
             <!-- Grid row -->
             <div class="row d-flex justify-content-center">
 
-                <!-- Grid column -->
+                <!-- brief description of website -->
                 <div class="col-xl-7 pb-2">
 
-                    <p class="card-text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga aliquid
-                        dolorem
-                        ea distinctio exercitationem delectus qui, quas eum architecto, amet quasi accusantium, fugit
-                        consequatur ducimus obcaecati numquam molestias hic itaque accusantium doloremque laudantium,
-                        totam rem aperiam.</p>
+                    <p class="text-white" id="summary">Are you Famished? Withering away from lack of food throughout your day?  <br>
+                         Willing to explore the horizons of your palate? Then FAMISHED is the way to go. <br>
+                            We accomodate to all types of eating, ranging from steakhouse’s to vegan restaurants and everything in between. <br>
+                            How to use: Type in what you’re feeling. Plot where you want. And win by eating! <br>
+                            Napoleon B: “Veni, vidi, vici. I came, I saw, I conquered”
+                    </p>
 
                 </div>
-                <!-- Grid column -->
+                <!-- Gbrief description of website -->
 
             </div>
             <!-- Grid row -->
 
             <hr class="my-4">
 
+            <!-- get started button to go to food filter form -->
             <div class="pt-2">
                 <button class="btn btn-success btn-xl js-scroll-trigger" id="foodFilter">Starved?</button>
             </div>
+            <!-- get started button to go to food filter form -->
 
         </div>
         <!-- Jumbotron -->
+
+
         <br>
         <br>
         <br>
@@ -125,17 +141,19 @@
 
             <div class="card" id="foodFilter">
 
+                <!-- Title -->
                 <div class="col-lg-10 mx-auto">
                     <h2>Food Filter</h2>
                     <p class="lead mb-5">Pick out your food preferences here!</p>
                 </div>
+                <!-- Title -->
 
                 <div class="card-body px-lg-5 pt-0">
 
                     <form class="md-form" style="color: transparent;">
 
 
-
+                        <!-- pre selected food option drop down menu -->
                         <div>
                             <select class="mdb-select md-form text-dark initialized" id="select">
                                 <option value="" disabled selected>Choose your option</option>
@@ -148,11 +166,16 @@
                             </select>
 
                         </div>
+                        <!-- pre selected food option drop down menu -->
 
+                        <!-- option to type food in text field, not on pre selected dropdown -->
                         <label for="input"></label>
                         <input type="text" id="input" class="form-control w-25" placeholder="Other">
+                        <!-- option to type food in text field, not on pre selected dropdown -->
+
                         <br>
 
+                        <!-- Choose range of calories -->
                         <p class="card-text lead mb-5">Calorie Range</p>
                         <div class="slidecontainer">
 
@@ -177,7 +200,7 @@
                             <label for="input"></label>
                             <input type="text" id="input" class="form-control w-25" placeholder="Zip Code">
                         </div>
-
+                        <!-- Choose range of calories -->
 
 
                         <!-- <div class="d-flex justify-content-between">
@@ -190,12 +213,14 @@
 
                         </div> -->
 
-
-                        <button class="btn btn-success btn-xl js-scroll-trigger" id="searchButton">Searching for Food</button>
+                        <!-- search button for food and zip code entered -->
+                        <button class="btn btn-success btn-xl js-scroll-trigger" id="searchButton">Searching for
+                            Food</button>
 
                         <div class="text-center">
 
                         </div>
+                        <!-- search button for food and zip code entered -->
                     </form>
                 </div>
             </div>
@@ -214,21 +239,24 @@
     <div class="row">
         <div class="card col-lg-10 mx-auto">
 
-            <!-- Change this to map  -->
+            <!-- Google map  -->
             <div id="map-container-google-9" class="z-depth-1-half map-container-5" style="height: 300px">
-                    <iframe width="600" height="450" frameborder="0" style="border:0"
-                    src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJK-0sC0Fl1oYRFccWTTgtw3M&key=AIzaSyA6MRuoTNuPK7uTCFuq_DqFMkxHMvC-zzU" allowfullscreen></iframe>
+                <iframe width="600" height="450" frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJK-0sC0Fl1oYRFccWTTgtw3M&key=AIzaSyA6MRuoTNuPK7uTCFuq_DqFMkxHMvC-zzU"
+                    allowfullscreen></iframe>
             </div>
+            <!-- Google map -->
 
             <!-- Card content -->
             <div class="card-body container text-center">
 
                 <!-- Title -->
                 <h2 class="card-title"><a>Good News!</a></h2>
+
                 <!-- Text -->
                 <p class="card-text lead mb-5">We found you some food!</p>
 
-                <!--Table-->
+                <!--Table showing results of selected items-->
                 <table id="tablePreview" class="table table-striped table-hover table-sm">
                     <!--Table head-->
                     <thead>
@@ -266,12 +294,13 @@
                     </tbody>
                     <!--Table body-->
                 </table>
-                <!--Table-->
+                <!--Table showing results of selected items-->
 
                 <div id="foo"></div>
 
-                <!-- Button -->
+                <!--Button should reset page back to Home/Beginning of page -->
                 <a class="btn btn-success btn-xl js-scroll-trigger" href="">All Set</a>
+                <!--Button should reset page back to Home/Beginning of page -->
 
             </div>
 
@@ -301,4 +330,9 @@
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
 </body>
+<<<<<<< HEAD
+
 </html>
+=======
+</html>
+>>>>>>> c949dd052fc11f10da3aa752dc0f0e590bd88fef

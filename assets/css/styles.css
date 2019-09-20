@@ -7,6 +7,12 @@ body {
   -o-background-size: cover;
 }
 
+#summary {
+  font-size: 14pt;
+  color: white;
+
+}
+
 #input{
   margin-left: 400px ;
 }
@@ -18,6 +24,7 @@ body {
   position:relative;
   height:0;
   }
+
   .map-container-5 iframe{
   left:0;
   top:0;
@@ -26,3 +33,4 @@ body {
   position:absolute;
   }
 
+    
