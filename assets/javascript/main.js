@@ -10,8 +10,7 @@ function generalFoodInfo() {
     var maxCal = $("#myRange").val();
     
     var foodInfo = `https://api.nutritionix.com/v1_1/search/${preselectedTerm}${searchTerm}?results=0%3A20&cal_min=0&cal_max=${maxCal}&fields=item_name%2Cbrand_name%2Citem_id%2Cbrand_id&appId=a2063711&appKey=32128ae3fa96a649e37745b8a692a95e`
-    console.log("im here");
-    
+
     $.ajax({
         url: foodInfo,
         method: "GET"
@@ -31,7 +30,7 @@ function generalFoodInfo() {
     for (let i = 0; i < response.hits.length; i++) {
     
         // this make a new div to store our information
-        var tableHead = $(".mainHead");
+        var tableHead = $(".mainhead");
         var newResult = $("<tr>");
     
         // pulls the name of the store
