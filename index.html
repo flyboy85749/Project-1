@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Project 1</title>
+    <title>Famished - Food Search App</title>
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
@@ -47,7 +47,7 @@
     <!-- navbar name of site also home button -->
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
         <div class="container">
-            <a class="navbar-brand white-text" href="#">Famished</a>
+            <a class="navbar-brand white-text" href="index.html">Famished</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -67,8 +67,8 @@
                         <!-- dropdown items in menu-->
                         <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Home</a>
-                            <a class="dropdown-item" href="#">Food Filter</a>
-                            <a class="dropdown-item" href="#">Locations</a>
+                            <a class="dropdown-item" href="#food">Food Filter</a>
+                            <a class="dropdown-item" href="#location">Locations</a>
                             <div class="dropdown-divider"></div>
                             <!-- dropdown items in menu-->
 
@@ -100,7 +100,7 @@
 
                     <p class="text-white" id="summary">Are you Famished? Withering away from lack of food throughout your day?  <br>
                          Willing to explore the horizons of your palate? Then FAMISHED is the way to go. <br>
-                            We accomodate to all types of eating, ranging from steakhouse’s to vegan restaurants and everything in between. <br>
+                            We accomodate all types of eating; ranging from steakhouses to vegan restaurants and everything in between. <br>
                             How to use: Type in what you’re feeling. Plot where you want. And win by eating! <br>
                             Napoleon B: “Veni, vidi, vici. I came, I saw, I conquered”
                     </p>
@@ -142,7 +142,7 @@
             <div class="card" id="foodFilter">
 
                 <!-- Title -->
-                <div class="col-lg-10 mx-auto">
+                <div id="food" class="col-lg-10 mx-auto">
                     <h2>Food Filter</h2>
                     <p class="lead mb-5">Pick out your food preferences here!</p>
                 </div>
@@ -198,7 +198,7 @@
                             </script>
 
                             <label for="input"></label>
-                            <input type="text" id="input" class="form-control w-25" placeholder="Zip Code">
+                            <input type="text" id="zip" class="form-control w-25" placeholder="Zip Code">
                         </div>
                         <!-- Choose range of calories -->
 
@@ -214,8 +214,8 @@
                         </div> -->
 
                         <!-- search button for food and zip code entered -->
-                        <button class="btn btn-success btn-xl js-scroll-trigger" id="searchButton">Searching for
-                            Food</button>
+                        <a class="btn btn-success btn-xl js-scroll-trigger" id="searchButton">Searching for
+                            Food</a>
 
                         <div class="text-center">
 
@@ -237,7 +237,7 @@
 
     <!-- Card -->
     <div class="row">
-        <div class="card col-lg-10 mx-auto">
+        <div id="location" class="card col-lg-10 mx-auto">
 
             <!-- Google map  -->
             <div id="map-container-google-9" class="z-depth-1-half map-container-5" style="height: 300px">
@@ -261,23 +261,7 @@
                     <!--Table head-->
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Name of Item</th>
-                            <th>Location</th>
-                            <th>Learn More</th>
-                        </tr>
-                    </thead>
-                    <!--Table head-->
-                    <!--Table body-->
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
+                            
                         </tr>
                     </tbody>
                     <!--Table body-->
