@@ -8,7 +8,7 @@ function generalFoodInfo() {
     
     var searchTerm = $("#input").val();
     var maxCal = $("#myRange").val();
-    
+  
     var foodInfo = `https://api.nutritionix.com/v1_1/search/${preselectedTerm}${searchTerm}?results=0%3A20&cal_min=0&cal_max=${maxCal}&fields=item_name%2Cbrand_name%2Citem_id%2Cbrand_id&appId=a2063711&appKey=32128ae3fa96a649e37745b8a692a95e`
 
     $.ajax({
@@ -60,10 +60,9 @@ function generalFoodInfo() {
         // function so that when a user clicks on a food it will pull more info for them to see it
         function detailedFoodInfo() {
             console.log("im food")
-            $(this).removeData();
+            $("#myModal").removeData();
 
-            var selectedFood = $("<a>").data("data-foodNumber");
-            var modalInfo = $(".modal-body");
+            var selectedFood = $(this).data("food");
             var foodInfo = `https://api.nutritionix.com/v1_1/item?id=${selectedFood}&appId=a2063711&appKey=32128ae3fa96a649e37745b8a692a95e`
             $.ajax({
                 url: foodInfo,
