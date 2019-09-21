@@ -5,9 +5,10 @@ function generalFoodInfo() {
     
     // need an if statment for our preselected term that if the value is set to something like "choose option" it returns
     // it as if it was nothing so preselected will be just ""
-    
+    var preselectedTerm = $("#select").val();
     var searchTerm = $("#input").val();
     var maxCal = $("#myRange").val();
+    var zip = $("#zip").val();
     
     var foodInfo = `https://api.nutritionix.com/v1_1/search/${preselectedTerm}${searchTerm}?results=0%3A20&cal_min=0&cal_max=${maxCal}&fields=item_name%2Cbrand_name%2Citem_id%2Cbrand_id&appId=a2063711&appKey=32128ae3fa96a649e37745b8a692a95e`
     console.log("im here");
@@ -18,7 +19,7 @@ function generalFoodInfo() {
     })
     // this should be the call to take our information and let it be seperated into store/food name/ and grab the id of the thing
     .then(function (response) {
-    console.log(response);
+    console.log(response.hits);
     //     if (response.pagination.total_count == 0) {
     
     // // mandol or whatever to be put here saying sorry no results
@@ -31,20 +32,21 @@ function generalFoodInfo() {
     for (let i = 0; i < response.hits.length; i++) {
     
         // this make a new div to store our information
-        var tableHead = $(".mainHead");
+        var tableHead = $("#mainHead");
         var newResult = $("<tr>");
     
         // pulls the name of the store
-        var newStoreName = $("<td>").text("Store Name:" + response.hits[i].fields.brand_name);
+        var newStoreName = $("<td>").text(response.hits[i].fields.brand_name);
     
         // pulls the name of the food they sell
-        var NewFoodName = $("<td>").text("Food Name:" + response.hits[i].fields.item_name);
+        var NewFoodName = $("<td>").text(response.hits[i].fields.item_name);
     
         // pulls the id of the food above
         var moreInfoButt = $("<td>");
-        var buttonInfo = $("<a>").text("Moar INfo");
+        var buttonInfo = $("<button>").text("More info");
         buttonInfo.attr("data-food", response.hits[i]._id);
-        buttonInfo.addClass("moreInfoButton");
+        buttonInfo.addClass("btn btn-primary");
+        buttonInfo.addClass("moreInfoButt");
         moreInfoButt.append(buttonInfo);
         // appending the info of our info into the new div then appends the div into our "list"
         newResult.append(newStoreName, NewFoodName, moreInfoButt);
@@ -78,14 +80,15 @@ function generalFoodInfo() {
             var sodium = response.nf_sodium;
             var itemName = response.item_name;
             // then we apply the information as text to show up in our modal
-            modalInfo.append($("<h>").text(`Information about ${itemName} is displayed in grams.`))
-            modalInfo.append($("<p>").text(`Total Amount of Calories is ${calories}`));
-            modalInfo.append($("<p>").text(`Total Amount of Protein is ${protein}G`));
-            modalInfo.append($("<p>").text(`Total Amount of Sugars is ${sugar}G`));
-            modalInfo.append($("<p>").text(`Total Amount of Fat is ${fat}G`));
-            modalInfo.append($("<p>").text(`Total Amount of Sodium is ${sodium}G`));
+            modalInfo.append($("#infoModal #itemName").text(`Information about ${itemName} is displayed in grams.`))
+            modalInfo.append($("#infoModal #calories").text(`Total Amount of Calories is ${calories}`));
+            modalInfo.append($("#infoModal #protein").text(`Total Amount of Protein is ${protein}G`));
+            modalInfo.append($("#infoModal #sugar").text(`Total Amount of Sugars is ${sugar}G`));
+            modalInfo.append($("#infoModal #fat").text(`Total Amount of Fat is ${fat}G`));
+            modalInfo.append($("#infoModal #sodium").text(`Total Amount of Sodium is ${sodium}G`));
             });
         }
     
     
-        $(document).on("click", ".moreInfoButton", detailedFoodInfo)
+        $(document).on("click", ".moreInfoButt", infoModal)
+        
