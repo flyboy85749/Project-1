@@ -65,12 +65,18 @@ function detailedFoodInfo() {
     $.ajax({
         url: brandInfo,
         method: "GET"
-    }).then(function(response){
+    }).then(function (response) {
         var brandName = response.name;
         var brandSite = response.website;
-        console.log(brandName, brandSite);
         $("#restaurant").val(`${brandName}`);
-        $("#website").html(`<a href="${brandSite}" target="_blank">Link to Thier site</a>`);
+        if (brandSite != null) {
+            $("#website").html(`<a href="${brandSite}" target="_blank">Link to Thier site</a>`);
+        }
+         else{
+            $("#website").html(`<a href="https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" target="_blank">Seems They dont have a site so have a cat picture!</a>`);
+
+        }
+        console.log(brandName, brandSite);
     });
     var foodInfo = `https://api.nutritionix.com/v1_1/item?id=${selectedFood}&appId=a2063711&appKey=32128ae3fa96a649e37745b8a692a95e`
     $.ajax({
@@ -80,25 +86,25 @@ function detailedFoodInfo() {
         console.log(response) // undefined
         // how i think we can call the specific info form our information
         var calories = response.nf_calories;
-        if (calories === null){
-            calories ="in another castle"
-            }
+        if (calories === null) {
+            calories = "in another castle"
+        }
         var protein = response.nf_protein;
-        if (protein === null){
-            protein ="in another castle"
-            }
+        if (protein === null) {
+            protein = "in another castle"
+        }
         var sugar = response.nf_sugars;
-        if (sugar === null){
-            sugar ="in another castle"
-            }
+        if (sugar === null) {
+            sugar = "in another castle"
+        }
         var fat = response.nf_total_fat;
-        if (fat === null){
-            fat ="in another castle"
-            }
+        if (fat === null) {
+            fat = "in another castle"
+        }
         var sodium = response.nf_sodium;
-        if (sodium === null){
-            sodium ="in another castle"
-            }
+        if (sodium === null) {
+            sodium = "in another castle"
+        }
         var itemName = response.item_name;
         // then we apply the information as text to show up in our modal
         $("#itemName").text(`Information about ${itemName} is displayed in grams.`)
@@ -107,7 +113,7 @@ function detailedFoodInfo() {
         $("#sugar").val(`Total Amount of Sugars is ${sugar} `);
         $("#fat").val(`Total Amount of Fat is ${fat}`);
         $("#sodium").val(`Total Amount of Sodium is ${sodium}`);
-        
+
     });
 }
 
