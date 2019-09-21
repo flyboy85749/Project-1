@@ -40,14 +40,14 @@
 
 </head>
 
-<body>
+<body id="page-top">
 
     <!-- navbar -->
 
     <!-- navbar name of site also home button -->
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
         <div class="container">
-            <a class="navbar-brand white-text" href="index.html">Famished</a>
+            <a class="navbar-brand white-text" href="#page-top">Famished</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -66,9 +66,9 @@
 
                         <!-- dropdown items in menu-->
                         <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Home</a>
+                            <a class="dropdown-item" href="#home">Home</a>
                             <a class="dropdown-item" href="#food">Food Filter</a>
-                            <a class="dropdown-item" href="#location">Locations</a>
+                            <a class="dropdown-item" href="#location">Location</a>
                             <div class="dropdown-divider"></div>
                             <!-- dropdown items in menu-->
 
@@ -115,7 +115,7 @@
 
             <!-- get started button to go to food filter form -->
             <div class="pt-2">
-                <button class="btn btn-success btn-xl js-scroll-trigger" id="foodFilter">Starved?</button>
+                <a class="btn btn-success btn-xl js-scroll-trigger" href="#foodFilter">Starved?</a>
             </div>
             <!-- get started button to go to food filter form -->
 
@@ -201,11 +201,12 @@
                             <!-- <label for="input"></label> -->
                             <input type="text" id="zip" class="form-control w-25" placeholder="Zip Code">
                             <!-- search button for food and zip code entered -->
-                        <a class="btn btn-success btn-xl js-scroll-trigger waves-effect waves-light" id="searchButt">Search for
+                        <a class="btn btn-success btn-xl js-scroll-trigger waves-effect waves-light" id="searchButt" href="#location">Search for
                             Food</a>
                             </div>
                         </div>
                     </div>
+                    
                        <!--------------------------  MODAL --------------------------------------------->
                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#infoModal"
                        data-whatever="@mdo">More Info</button> 
