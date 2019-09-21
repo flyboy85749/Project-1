@@ -18,15 +18,7 @@ function generalFoodInfo() {
     // this should be the call to take our information and let it be seperated into store/food name/ and grab the id of the thing
     .then(function (response) {
     console.log(response);
-    //     if (response.pagination.total_count == 0) {
-    
-    // // mandol or whatever to be put here saying sorry no results
-    
-    //     var itemindex = topics.indexOf(topic);
-    //     if (itemindex > -1) {
-    //     topics.splice(itemindex, 1);
-    //     };
-    // }
+
     for (let i = 0; i < response.hits.length; i++) {
     
         // this make a new div to store our information
@@ -60,7 +52,7 @@ function generalFoodInfo() {
         // function so that when a user clicks on a food it will pull more info for them to see it
         function detailedFoodInfo() {
             console.log("im food")
-            $("#myModal").removeData();
+            $(".delete").empty();
 
             var selectedFood = $(this).data("food");
             var foodInfo = `https://api.nutritionix.com/v1_1/item?id=${selectedFood}&appId=a2063711&appKey=32128ae3fa96a649e37745b8a692a95e`
@@ -68,6 +60,9 @@ function generalFoodInfo() {
                 url: foodInfo,
                 method: "GET"
             }).then(function (response) {
+                console.log(response)
+                $('#myModal').modal('show');
+
             // how i think we can call the specific info form our information
             var calories = response.nf_calories;
             var protein = response.nf_protein;
@@ -75,13 +70,30 @@ function generalFoodInfo() {
             var fat = response.nf_total_fat;
             var sodium = response.nf_sodium;
             var itemName = response.item_name;
+            var cholesterol = response.nf_cholesterol;
+            var fiber = response.nf_dietary_fiber;
+            var iron = response.nf_iron_dv;
+            var fat = response.nf_total_fat;
+            var servingPerContainer = response.nf_servings_per_container;
+            var servingSize = response.nf_serving_size_qty;
+            var modalBody = $(".modal-body");
+            var modalInfo = $("<div>");
+            modalInfo.addClass("delete");
             // then we apply the information as text to show up in our modal
             modalInfo.append($("<h>").text(`Information about ${itemName} is displayed in grams.`))
+            modalInfo.append($("<p>").text(`Serving Size ${servingSize}`));
+            modalInfo.append($("<p>").text(`Servings per Container${servingPerContainer}403127`));
+            modalInfo.append($("<p>").text(`Total Amount of fiber is ${fiber}G`));
+            modalInfo.append($("<p>").text(`Total Amount of Cholesterol is ${cholesterol}`));
+            modalInfo.append($("<p>").text(`Total Amount of Iron is ${iron}G`));
+            modalInfo.append($("<p>").text(`Total Amount of Fat is ${fat}G`));
             modalInfo.append($("<p>").text(`Total Amount of Calories is ${calories}`));
             modalInfo.append($("<p>").text(`Total Amount of Protein is ${protein}G`));
             modalInfo.append($("<p>").text(`Total Amount of Sugars is ${sugar}G`));
             modalInfo.append($("<p>").text(`Total Amount of Fat is ${fat}G`));
             modalInfo.append($("<p>").text(`Total Amount of Sodium is ${sodium}G`));
+            modalBody.append(modalInfo);
+
             });
         }
     
