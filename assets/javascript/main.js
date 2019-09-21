@@ -2,7 +2,8 @@ console.log("i am alive")
 // this is what will pull all our results for the searched food term
 function generalFoodInfo() {
     var preselectedTerm = $("#select").val();
-    
+    $(".byeBye").empty();
+
     // need an if statment for our preselected term that if the value is set to something like "choose option" it returns
     // it as if it was nothing so preselected will be just ""
     var preselectedTerm = $("#select").val();
@@ -33,7 +34,7 @@ function generalFoodInfo() {
     
         // this make a new div to store our information
         var tableHead = $("#mainHead");
-        var newResult = $("<tr>");
+        var newResult = $("<tr class='byeBye'>");
     
         // pulls the name of the store
         var newStoreName = $("<td>").text(response.hits[i].fields.brand_name);
@@ -45,12 +46,7 @@ function generalFoodInfo() {
         var moreInfoButt = $("<td>");
         var buttonInfo = $(`<button type="button" class="btn btn-primary moreInfoButt" data-toggle="modal" data-target="#infoModal"
         data-whatever="@mdo">More Info</button> `)
-        // var buttonInfo = $("<button>").text("More info");
         buttonInfo.attr("data-food", response.hits[i]._id);
-        // buttonInfo.addClass("btn btn-primary");
-        // buttonInfo.addClass("moreInfoButt");
-        // buttonInfo.adddata-toggle("modal");
-        // buttonInfo.adddata-EventTarget("#infoModal");
         moreInfoButt.append(buttonInfo);
         // appending the info of our info into the new div then appends the div into our "list"
         newResult.append(newStoreName, NewFoodName, moreInfoButt);
