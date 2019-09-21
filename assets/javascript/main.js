@@ -2,7 +2,10 @@ console.log("i am alive")
 // this is what will pull all our results for the searched food term
 function generalFoodInfo() {
     var preselectedTerm = $("#select").val();
-    
+    console.log(preselectedTerm);
+    if (preselectedTerm === null) {
+        preselectedTerm = ("")
+    }
     // need an if statment for our preselected term that if the value is set to something like "choose option" it returns
     // it as if it was nothing so preselected will be just ""
     
@@ -10,7 +13,7 @@ function generalFoodInfo() {
     var maxCal = $("#myRange").val();
   
     var foodInfo = `https://api.nutritionix.com/v1_1/search/${preselectedTerm}${searchTerm}?results=0%3A20&cal_min=0&cal_max=${maxCal}&fields=item_name%2Cbrand_name%2Citem_id%2Cbrand_id&appId=a2063711&appKey=32128ae3fa96a649e37745b8a692a95e`
-
+console.log(foodInfo);
     $.ajax({
         url: foodInfo,
         method: "GET"
@@ -18,7 +21,7 @@ function generalFoodInfo() {
     // this should be the call to take our information and let it be seperated into store/food name/ and grab the id of the thing
     .then(function (response) {
     console.log(response);
-
+         
     for (let i = 0; i < response.hits.length; i++) {
     
         // this make a new div to store our information
@@ -26,10 +29,10 @@ function generalFoodInfo() {
         var newResult = $("<tr>");
     
         // pulls the name of the store
-        var newStoreName = $("<td>").text("Store Name:" + response.hits[i].fields.brand_name);
+        var newStoreName = $("<td>").text(response.hits[i].fields.brand_name);
     
         // pulls the name of the food they sell
-        var NewFoodName = $("<td>").text("Food Name:" + response.hits[i].fields.item_name);
+        var NewFoodName = $("<td>").text(response.hits[i].fields.item_name);
     
         // pulls the id of the food above
         var moreInfoButt = $("<td>");
@@ -74,7 +77,6 @@ function generalFoodInfo() {
             var fiber = response.nf_dietary_fiber;
             var iron = response.nf_iron_dv;
             var fat = response.nf_total_fat;
-            var servingPerContainer = response.nf_servings_per_container;
             var servingSize = response.nf_serving_size_qty;
             var modalBody = $(".modal-body");
             var modalInfo = $("<div>");
@@ -82,7 +84,6 @@ function generalFoodInfo() {
             // then we apply the information as text to show up in our modal
             modalInfo.append($("<h>").text(`Information about ${itemName} is displayed in grams.`))
             modalInfo.append($("<p>").text(`Serving Size ${servingSize}`));
-            modalInfo.append($("<p>").text(`Servings per Container${servingPerContainer}403127`));
             modalInfo.append($("<p>").text(`Total Amount of fiber is ${fiber}G`));
             modalInfo.append($("<p>").text(`Total Amount of Cholesterol is ${cholesterol}`));
             modalInfo.append($("<p>").text(`Total Amount of Iron is ${iron}G`));
