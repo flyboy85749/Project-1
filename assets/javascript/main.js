@@ -80,20 +80,38 @@ function detailedFoodInfo() {
         console.log(response) // undefined
         // how i think we can call the specific info form our information
         var calories = response.nf_calories;
+        if (calories === null){
+            calories ="in another castle"
+            }
         var protein = response.nf_protein;
+        if (protein === null){
+            protein ="in another castle"
+            }
         var sugar = response.nf_sugars;
+        if (sugar === null){
+            sugar ="in another castle"
+            }
         var fat = response.nf_total_fat;
+        if (fat === null){
+            fat ="in another castle"
+            }
         var sodium = response.nf_sodium;
+        if (sodium === null){
+            sodium ="in another castle"
+            }
         var itemName = response.item_name;
         // then we apply the information as text to show up in our modal
         $("#itemName").text(`Information about ${itemName} is displayed in grams.`)
         $("#calories").val(`Total Amount of Calories is ${calories}`);
-        $("#protein").val(`Total Amount of Protein is ${protein}G`);
-        $("#sugar").val(`Total Amount of Sugars is ${sugar}G`);
-        $("#fat").val(`Total Amount of Fat is ${fat}G`);
-        $("#sodium").val(`Total Amount of Sodium is ${sodium}G`);
+        $("#protein").val(`Total Amount of Protein is ${protein}`);
+        $("#sugar").val(`Total Amount of Sugars is ${sugar} `);
+        $("#fat").val(`Total Amount of Fat is ${fat}`);
+        $("#sodium").val(`Total Amount of Sodium is ${sodium}`);
+        
     });
 }
 
 
 $(document).on("click", ".moreInfoButt", detailedFoodInfo)
+
+
