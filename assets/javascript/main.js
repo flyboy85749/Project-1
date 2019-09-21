@@ -43,10 +43,14 @@ function generalFoodInfo() {
     
         // pulls the id of the food above
         var moreInfoButt = $("<td>");
-        var buttonInfo = $("<button>").text("More info");
+        var buttonInfo = $(`<button type="button" class="btn btn-primary moreInfoButt" data-toggle="modal" data-target="#infoModal"
+        data-whatever="@mdo">More Info</button> `)
+        // var buttonInfo = $("<button>").text("More info");
         buttonInfo.attr("data-food", response.hits[i]._id);
-        buttonInfo.addClass("btn btn-primary");
-        buttonInfo.addClass("moreInfoButt");
+        // buttonInfo.addClass("btn btn-primary");
+        // buttonInfo.addClass("moreInfoButt");
+        // buttonInfo.adddata-toggle("modal");
+        // buttonInfo.adddata-EventTarget("#infoModal");
         moreInfoButt.append(buttonInfo);
         // appending the info of our info into the new div then appends the div into our "list"
         newResult.append(newStoreName, NewFoodName, moreInfoButt);
@@ -63,15 +67,17 @@ function generalFoodInfo() {
         // function so that when a user clicks on a food it will pull more info for them to see it
         function detailedFoodInfo() {
             console.log("im food")
-            $(this).removeData();
+            // $(this).removeData();
 
-            var selectedFood = $("<a>").data("data-foodNumber");
+            var selectedFood = $(this).data("food");
+            console.log(selectedFood)
             var modalInfo = $(".modal-body");
             var foodInfo = `https://api.nutritionix.com/v1_1/item?id=${selectedFood}&appId=a2063711&appKey=32128ae3fa96a649e37745b8a692a95e`
             $.ajax({
                 url: foodInfo,
                 method: "GET"
             }).then(function (response) {
+                console.log(response) // undefined
             // how i think we can call the specific info form our information
             var calories = response.nf_calories;
             var protein = response.nf_protein;
@@ -80,15 +86,15 @@ function generalFoodInfo() {
             var sodium = response.nf_sodium;
             var itemName = response.item_name;
             // then we apply the information as text to show up in our modal
-            modalInfo.append($("#infoModal #itemName").text(`Information about ${itemName} is displayed in grams.`))
-            modalInfo.append($("#infoModal #calories").text(`Total Amount of Calories is ${calories}`));
-            modalInfo.append($("#infoModal #protein").text(`Total Amount of Protein is ${protein}G`));
-            modalInfo.append($("#infoModal #sugar").text(`Total Amount of Sugars is ${sugar}G`));
-            modalInfo.append($("#infoModal #fat").text(`Total Amount of Fat is ${fat}G`));
-            modalInfo.append($("#infoModal #sodium").text(`Total Amount of Sodium is ${sodium}G`));
+            $("#itemName").text(`Information about ${itemName} is displayed in grams.`)
+            $("#calories").val(`Total Amount of Calories is ${calories}`);
+            $("#protein").val(`Total Amount of Protein is ${protein}G`);
+            $("#sugar").val(`Total Amount of Sugars is ${sugar}G`);
+            $("#fat").val(`Total Amount of Fat is ${fat}G`);
+            $("#sodium").val(`Total Amount of Sodium is ${sodium}G`);
             });
         }
     
     
-        $(document).on("click", ".moreInfoButt", infoModal)
+        $(document).on("click", ".moreInfoButt", detailedFoodInfo)
         
