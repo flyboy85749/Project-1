@@ -8,10 +8,22 @@ body {
   
 }
 
+#nav-style {
+  font-family: 'Special Elite', cursive;
+}
+.main-style {
+  font-family: 'Special Elite', cursive;
+  font-size: 56pt;
+}
+
+.font-style {
+  font-family: 'Vollkorn SC', serif;
+}
 
 #summary {
   font-size: 14pt;
   color: white;
+  font-family: 'Vollkorn SC', serif;
 
 }
 
