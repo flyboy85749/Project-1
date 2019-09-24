@@ -141,7 +141,7 @@
         <!-- Jumbotron -->
 
 
-        
+
     </div>
 
     </div>
@@ -288,73 +288,79 @@
     </div>
     </div>
     </div>
-    
+
 
     <!-- Card -->
     <div class="row">
-        <!-- using google maps embed API -->
-        <iframe width="600" height="450" frameborder="0" style="border:0"
-src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJK-0sC0Fl1oYRFccWTTgtw3M&key=AIzaSyBHJoUICa4QltXCnuuyI92Q9RXeJUzUJ4M " allowfullscreen></iframe>
+        <div class="card col-lg-10 mx-auto bg-transparent">
+
+            <!-- google map -->
+            <!-- using google maps embed API -->
+            <div id="map-container-google-9" class="z-depth-1-half map-container-5" style="height: 300px">
+                <iframe width="600" height="450" frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJK-0sC0Fl1oYRFccWTTgtw3M&key=AIzaSyBHJoUICa4QltXCnuuyI92Q9RXeJUzUJ4M "
+                    allowfullscreen></iframe>
+            </div>
+            <!-- google map -->
+
+            <!-- Card content -->
+            <div class="card-body container text-center">
+
+                <br>
+                <br>
+                <!-- Title -->
+                <h2 class="card-title main-style white-text" id="location"><a>Good News!</a></h2>
+
+                <!-- Text -->
+                <p class="card-text lead mb-5 font-style white-text">We found you some food!</p>
+
+                <!--Table showing results of selected items-->
+                <table id="mainHead" class="table table-hover table-sm font-style white-text">
+                    <!--Table head-->
+                    <thead>
+                        <tr>
+                            <th class="boldTable">Brand / Restaurant</th>
+                            <th class="boldTable">Your Selection</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <td></td>
+                    </tbody>
+                    <!--Table body-->
+                </table>
+                <!--Table showing results of selected items-->
 
 
-
-        <!-- Card content -->
-        <div class="card-body container text-center">
-
-            <br>
-            <br>
-            <!-- Title -->
-            <h2 class="card-title main-style white-text" id="location"><a>Good News!</a></h2>
-
-            <!-- Text -->
-            <p class="card-text lead mb-5 font-style white-text">We found you some food!</p>
-
-            <!--Table showing results of selected items-->
-            <table id="mainHead" class="table table-hover table-sm font-style white-text">
-                <!--Table head-->
-                <thead>
-                    <tr>
-                        <th class="boldTable">Brand / Restaurant</th>
-                        <th class="boldTable">Your Selection</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <td></td>
-                </tbody>
-                <!--Table body-->
-            </table>
-            <!--Table showing results of selected items-->
-
-
-            <!-- Pagination -->
-            <nav aria-label="Page navigation">
-                <ul class="pagination font-style white-text">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
                 <!-- Pagination -->
-            </nav>
-            <div id="foo"></div>
+                <nav aria-label="Page navigation">
+                    <ul class="pagination font-style white-text">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Pagination -->
+                </nav>
+                <div id="foo"></div>
 
-            <!--Button should reset page back to Home/Beginning of page -->
-            <a class="btn btn-success btn-xl js-scroll-trigger waves-effect waves-light buttonFont" href="#navBar">All
-                Set</a>
-            <!--Button should reset page back to Home/Beginning of page -->
+                <!--Button should reset page back to Home/Beginning of page -->
+                <a class="btn btn-success btn-xl js-scroll-trigger waves-effect waves-light buttonFont"
+                    href="#navBar">All
+                    Set</a>
+                <!--Button should reset page back to Home/Beginning of page -->
+
+            </div>
 
         </div>
-
-    </div>
     </div>
     <!-- Card -->
 
