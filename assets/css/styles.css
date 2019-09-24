@@ -1,6 +1,6 @@
 /* Set a background image by replacing the URL below */
 body {
-  background: url(../images/panPic.jpg) no-repeat center center fixed;
+  background: url(https://format-com-cld-res.cloudinary.com/image/private/s--1aleo1cN--/c_limit,g_center,h_65535,w_700/a_auto,fl_keep_iptc.progressive,q_95/v1/05c5ec96f6bfbead5e59d9ebb433122c/Madelene-Farin-Photo-Surfaces-21.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -20,11 +20,34 @@ body {
   font-family: 'Vollkorn SC', serif;
 }
 
+#subHeadline {
+  font-size: 15pt;
+}
+
 #summary {
   font-size: 14pt;
+  font-stretch: ultra-expanded;
   color: white;
   font-family: 'Vollkorn SC', serif;
 
+}
+
+.buttonFont {
+  font-family: 'Special Elite', cursive;
+  font-size: 14pt;
+}
+
+.moreInfoFont {
+  font-family: 'Special Elite', cursive;
+  font-size: 14pt;
+}
+
+#foodFilter {
+  background-color: transparent;
+}
+
+#boldTable {
+  font-size: 20pt;
 }
 
 #input{
@@ -67,8 +90,16 @@ body {
     width: 200px;
   }
 
+  #mainHead {
+    font-size: 16pt;
+  }
+
+
   .demo {
     color: black;
   }
 
+  .footer {
+    font-family: 'Special Elite', cursive;
+  }
     
