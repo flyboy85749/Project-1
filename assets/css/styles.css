@@ -1,6 +1,6 @@
 /* Set a background image by replacing the URL below */
 body {
-  background: url('https://format-com-cld-res.cloudinary.com/image/private/s--JhgW_Bvj--/c_limit,g_center,h_550,w_65535/a_auto,fl_keep_iptc.progressive,q_95/v1/594f8cc17459e148d2ac05a4cabef789/_TSB2145.jpg') no-repeat center center fixed;
+  background: url(../images/panPic.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -25,6 +25,17 @@ body {
   color: white;
   font-family: 'Vollkorn SC', serif;
 
+}
+
+#input{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+#zip{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 #mapid { 
