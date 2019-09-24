@@ -41,7 +41,15 @@
 
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
+    <!-- leaflet map css link -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
 
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+ integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+ crossorigin=""></script>
 </head>
 
 <body id="page-top">
@@ -289,15 +297,9 @@
 
     <!-- Card -->
     <div class="row">
-        <div id="location" class="card col-lg-10 mx-auto">
+        <div id="mapid">MAP GOES HERE</div>
 
-            <!-- Google map  -->
-            <div id="map-container-google-9" class="z-depth-1-half map-container-5" style="height: 300px">
-                <iframe width="600" height="450" frameborder="0" style="border:0"
-                    src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJK-0sC0Fl1oYRFccWTTgtw3M&key=AIzaSyA6MRuoTNuPK7uTCFuq_DqFMkxHMvC-zzU"
-                    allowfullscreen></iframe>
-            </div>
-            <!-- Google map -->
+            
 
             <!-- Card content -->
             <div class="card-body container text-center">
