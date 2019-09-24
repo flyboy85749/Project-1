@@ -38,6 +38,15 @@ body {
   text-align: center;
 }
 
+#mapid { 
+  height: 600px;
+  width: 1000px;
+  margin-left: 200px; 
+  margin-top: 20px;
+}
+
+
+
 
 .map-container-5{
   overflow:hidden;
