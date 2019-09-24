@@ -116,7 +116,7 @@ function detailedFoodInfo() {
 
     });
 }
-
+$(document).on("click", ".moreInfoButt", detailedFoodInfo)
 // code for leaflet mapping
 
 // initialize the map on the "map" div with a given center and zoom
@@ -130,6 +130,5 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 
 
-$(document).on("click", ".moreInfoButt", detailedFoodInfo)
 
 
