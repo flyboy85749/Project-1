@@ -61,7 +61,7 @@ function detailedFoodInfo() {
     console.log(brandID);
     var selectedFood = $(this).data("food");
     console.log(selectedFood)
-    var brandInfo = `https://api.nutritionix.com/v1_1/brand/${brandID}?appId=a2063711&appKey=32128ae3fa96a649e37745b8a692a95e`
+    var brandInfo = `https://api.nutritionix.com/v1_1/brand/${brandID}?appId=ced5c671&appKey=bc7360163a20bb6a2885612c6e3fd373`
     $.ajax({
         url: brandInfo,
         method: "GET"
@@ -70,7 +70,7 @@ function detailedFoodInfo() {
         var brandSite = response.website;
         $("#restaurant").val(`${brandName}`);
         if (brandSite != null) {
-            $("#website").html(`<a href="${brandSite}" target="_blank">Link to Thier site</a>`);
+            $("#website").html(`<a href="${brandSite}" target="_blank">Link to Their site</a>`);
         }
          else{
             $("#website").html(`<a href="https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" target="_blank">Seems They dont have a site so have a cat picture!</a>`);
@@ -78,7 +78,7 @@ function detailedFoodInfo() {
         }
         console.log(brandName, brandSite);
     });
-    var foodInfo = `https://api.nutritionix.com/v1_1/item?id=${selectedFood}&appId=a2063711&appKey=32128ae3fa96a649e37745b8a692a95e`
+    var foodInfo = `https://api.nutritionix.com/v1_1/item?id=${selectedFood}&appId=ced5c671&appKey=bc7360163a20bb6a2885612c6e3fd373`
     $.ajax({
         url: foodInfo,
         method: "GET"
