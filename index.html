@@ -7,7 +7,7 @@
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    
+
     <!-- reset css link, so site looks same across browsers -->
     <link rel="stylesheet" href="assets/css/reset.css">
 
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css"
         integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
 
-        <!-- Google Font link -->
+    <!-- Google Font link -->
     <link href="https://fonts.googleapis.com/css?family=Vollkorn+SC&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
 
@@ -43,13 +43,13 @@
 
     <!-- leaflet map css link -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin=""/>
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
 
-     <!-- Make sure you put this AFTER Leaflet's CSS -->
- <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
- integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
- crossorigin=""></script>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin=""></script>
 </head>
 
 <body id="page-top">
@@ -57,7 +57,7 @@
     <!-- navbar -->
 
     <!-- navbar name of site also home button -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent" id="navBar">
         <div class="container">
             <a class="navbar-brand white-text" id="nav-style" href="#page-top">Famished</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -70,8 +70,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle white-text font-style" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle white-text font-style" href="#" id="navbarDropdown"
+                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Menu
                         </a>
                         <!-- navbar menu dropdown on right side -->
@@ -102,19 +102,24 @@
             <!-- Title of page -->
             <h2 class="white-text card-title h2 main-style">Welcome to Famished!</h2>
             <!-- Subtitle -->
-            <p class="white-text my-4 font-weight-bold font-style">Your destination for food you prefer</p>
+            <p class="white-text my-4 font-weight-bold font-style" id="subHeadline">Your destination for food you prefer
+            </p>
 
             <!-- Grid row -->
             <div class="row d-flex justify-content-center">
 
                 <!-- brief description of website -->
-                <div class="col-xl-7 pb-2">
+                <div class="col-xl-8 pb-2">
 
-                    <p class="text-white" id="summary">Are you Famished? Withering away from lack of food throughout your day?  <br>
-                         Willing to explore the horizons of your palate? Then FAMISHED is the way to go. <br>
-                            We accomodate all types of eating; ranging from steakhouses to vegan restaurants and everything in between. <br>
-                            How to use: Type in what you’re feeling. Plot where you want. And win by eating! <br>
-                            Napoleon B: “Veni, vidi, vici. I came, I saw, I conquered”
+                    <p class="text-white" id="summary">Are you Famished? Withering away from lack of food throughout
+                        your day? <br>
+                        Willing to explore the horizons of your palate? Then FAMISHED is the way to go. <br>
+                        We accomodate all types of eating, from steakhouses to vegan treats and restaurants and
+                        everything in between. <br><br>
+                        <strong>How it works: &nbsp 1: Type in what you’re feeling. &nbsp 2: Plot where you want. &nbsp
+                            3: Win by
+                            eating!</strong> <br><br>
+
                     </p>
 
                 </div>
@@ -127,7 +132,8 @@
 
             <!-- get started button to go to food filter form -->
             <div class="pt-2">
-                <a class="btn btn-success btn-xl js-scroll-trigger font-style" href="#foodFilter">Starved?</a>
+                <a class="btn btn-success btn-xl js-scroll-trigger waves-effect waves-light buttonFont"
+                    href="#foodFilter">Starved?</a>
             </div>
             <!-- get started button to go to food filter form -->
 
@@ -135,28 +141,21 @@
         <!-- Jumbotron -->
 
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+
     </div>
 
     </div>
 
     <!-- Food Filter -->
     <div class="row">
-        <div class="jumbotron text-center col-lg-10 mx-auto bg-transparent">
+        <div class="jumbotron text-center col-lg-6 mx-auto bg-transparent">
 
             <div class="card" id="foodFilter">
 
                 <!-- Title -->
                 <div id="food" class="col-lg-10 mx-auto">
-                    <h2 class="font-style">Food Filter</h2>
-                    <p class="lead mb-5 font-style">Pick out your food preferences here!</p>
+                    <h2 class="main-style white-text">Food Filter</h2>
+                    <p class="lead mb-5 font-style white-text">Pick out your food preferences here!</p>
                 </div>
                 <!-- Title -->
 
@@ -183,168 +182,181 @@
                         <!-- option to type food in text field, not on pre selected dropdown -->
                         <div class="col"></div>
                         <!-- <label for="input"></label> -->
-                        <input type="text" id="input" class="form-control w-25 font-style" placeholder="What do you crave?">
+
+                        <input type="text" id="input" class="form-control w-25 font-style text-white"
+                            placeholder="What do you crave?">
                         <!-- option to type food in text field, not on pre selected dropdown -->
 
                         <br>
 
                         <!-- Choose range of calories -->
-                        <p class="card-text lead mb-5 font-style">Calorie Range</p>
+                        <p class="card-text lead mb-5 font-style white-text">Calorie Range</p>
                         <div class="slidecontainer">
                             <div class="col">
-                            <input type="range" class="custom-range w-25 font-style" min="100" max="5000" step="1"
-                                id="myRange" />
-                            <p class="demo font-style">Up to: <span id="demo"></span> calories</p>
-                        
-                            <script type="text/javascript">
-                               // put script inline to test
+                                <input type="range" class="custom-range w-25 font-style white-text" min="100" max="5000"
+                                    step="1" id="myRange" />
+                                <p class="demo font-style white-text">Up to: <span id="demo"></span> calories</p>
 
-                                // first, we have the calorie range slider to work with
-                                var slider = document.getElementById('myRange')
-                                 var output = document.getElementById('demo')
-                                output.innerHTML = slider.value
+                                <script type="text/javascript">
+                                    // put script inline to test
 
-                                slider.oninput = function() {
-                                output.innerHTML = this.value
-                                console.log(this.value) // this works!
-                             }
-                            </script>
+                                    // first, we have the calorie range slider to work with
+                                    var slider = document.getElementById('myRange')
+                                    var output = document.getElementById('demo')
+                                    output.innerHTML = slider.value
 
-                            <!-- <label for="input"></label> -->
-                            <input type="text" id="zip" class="form-control w-25 font-style" placeholder="Zip Code">
-                            <!-- search button for food and zip code entered -->
-                        <a class="btn btn-success btn-xl js-scroll-trigger waves-effect waves-light font-style" id="searchButt" href="#location">Search for
-                            Food</a>
+                                    slider.oninput = function () {
+                                        output.innerHTML = this.value
+                                        console.log(this.value) // this works!
+                                    }
+                                </script>
+
+                                <!-- <label for="input"></label> -->
+                                <input type="text" id="zip" class="form-control w-25 font-style text-white"
+                                    placeholder="Zip Code">
+                                <!-- search button for food and zip code entered -->
+                                <a class="btn btn-success btn-xl js-scroll-trigger waves-effect waves-light buttonFont"
+                                    id="searchButt" href="#location">Search for
+                                    Food</a>
                             </div>
                         </div>
-                    </div>
+                </div>
 
-                       <!--------------------------  MODAL --------------------------------------------->
-                       <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#infoModal"
+                <!--------------------------  MODAL --------------------------------------------->
+                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#infoModal"
                        data-whatever="@mdo">More Info</button>  -->
-                   </div>
-                   <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel"
-                     aria-hidden="true">
-                     <div class="modal-dialog" role="document">
-                       <div class="modal-content">
-                         <div class="modal-header">
-                           <h5 class="modal-title" id="itemName">Item Name</h5>
-                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                             <span aria-hidden="true">&times;</span>
-                           </button>
-                         </div>
-                         <div class="modal-body">
-                           <form>
-                                <div class="form-group">
-                                        <label for="calories" class="col-form-label">restaurant is: </label>
-                                        <input type="text" class="form-control" id="restaurant">
-                                      </div>
-                                      <div class="form-group">
-                                            <label for="calories" class="col-form-label"></label>
-                                            <a type="text" id="website"> </a>
-                                          </div>
-                             <div class="form-group">
-                               <label for="calories" class="col-form-label font-style">Calories:</label>
-                               <input type="text" class="form-control" id="calories">
-                             </div>
-                             <div class="form-group">
-                               <label for="train-destination" class="col-form-label font-style">Protein:</label>
-                               <input type="text" class="form-control" id="protein">
-                             </div>
-                             <div class="form-group">
-                               <label for="train-frequency" class="col-form-label font-style">Sugar:</label>
-                               <input type="text" class="form-control" id="sugar">
-                             </div>
-                             <div class="form-group">
-                                <label for="train-frequency" class="col-form-label font-style">Fat:</label>
-                                <input type="text" class="form-control" id="fat">
-                              </div>
-                              <div class="form-group">
-                                <label for="train-frequency" class="col-form-label font-style">Sodium:</label>
-                                <input type="text" class="form-control" id="sodium">
-                              </div>
-                           </form>
-                         </div>
-                         <div class="modal-footer">
-                           <button type="button" class="btn btn-secondary font-style" data-dismiss="modal">Close</button>
-                           <!-- <button type="button" id="add" class="btn btn-primary">Add Train</button> -->
-                         </div>
-                       </div>
-                     </div>
-                   </div>
-                       <!--------------------------  MODAL --------------------------------------------->
-
-
-                        
-                            
-                        <div class="text-center">
-
+            </div>
+            <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title font-style" id="itemName">Item Name</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                        <!-- search button for food and zip code entered -->
-                    </form>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="calories" class="col-form-label font-style">restaurant is: </label>
+                                    <input type="text" class="form-control font-style" id="restaurant">
+                                </div>
+                                <div class="form-group">
+                                    <label for="calories" class="col-form-label"></label>
+                                    <a type="text" id="website"> </a>
+                                </div>
+                                <div class="form-group">
+                                    <label for="calories" class="col-form-label font-style">Calories:</label>
+                                    <input type="text" class="form-control font-style" id="calories">
+                                </div>
+                                <div class="form-group">
+                                    <label for="train-destination" class="col-form-label font-style">Protein:</label>
+                                    <input type="text" class="form-control font-style" id="protein">
+                                </div>
+                                <div class="form-group">
+                                    <label for="train-frequency" class="col-form-label font-style">Sugar:</label>
+                                    <input type="text" class="form-control font-style" id="sugar">
+                                </div>
+                                <div class="form-group">
+                                    <label for="train-frequency" class="col-form-label font-style">Fat:</label>
+                                    <input type="text" class="form-control font-style" id="fat">
+                                </div>
+                                <div class="form-group">
+                                    <label for="train-frequency" class="col-form-label font-style">Sodium:</label>
+                                    <input type="text" class="form-control font-style" id="sodium">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success buttonFont" data-dismiss="modal">Close</button>
+                            <!-- <button type="button" id="add" class="btn btn-primary">Add Train</button> -->
+                        </div>
+                    </div>
                 </div>
             </div>
+            <!--------------------------  MODAL --------------------------------------------->
+
+
+
+
+            <div class="text-center">
+
+            </div>
+            <!-- search button for food and zip code entered -->
+            </form>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    </div>
+    </div>
+
 
     <!-- Card -->
     <div class="row">
-        <div id="mapid">MAP GOES HERE</div>
+        <div class="card col-lg-10 mx-auto bg-transparent">
 
-            
+            <!-- google map -->
+            <!-- using google maps embed API -->
+            <div id="map-container-google-9" class="z-depth-1-half map-container-5" style="height: 300px">
+                <iframe width="600" height="450" frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJK-0sC0Fl1oYRFccWTTgtw3M&key=AIzaSyBHJoUICa4QltXCnuuyI92Q9RXeJUzUJ4M "
+                    allowfullscreen></iframe>
+            </div>
+            <!-- google map -->
 
             <!-- Card content -->
             <div class="card-body container text-center">
 
+                <br>
+                <br>
                 <!-- Title -->
-                <h2 class="card-title font-style"><a>Good News!</a></h2>
+                <h2 class="card-title main-style white-text" id="location"><a>Good News!</a></h2>
 
                 <!-- Text -->
-                <p class="card-text lead mb-5 font-style">We found you some food!</p>
+                <p class="card-text lead mb-5 font-style white-text">We found you some food!</p>
 
                 <!--Table showing results of selected items-->
-                <table id="mainHead" class="table table-striped table-hover table-sm font-style">
+                <table id="mainHead" class="table table-hover table-sm font-style white-text">
                     <!--Table head-->
                     <thead>
                         <tr>
-                            <td>Item Type</td>
-                            <td>Item Name</td>
-                            <td></td>
+                            <th class="boldTable">Brand / Restaurant</th>
+                            <th class="boldTable">Your Selection</th>
                         </tr>
+                    </thead>
+                    <tbody>
+                        <td></td>
                     </tbody>
                     <!--Table body-->
                 </table>
                 <!--Table showing results of selected items-->
-                
+
+
+                <!-- Pagination -->
                 <nav aria-label="Page navigation">
-  <ul class="pagination font-style">
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+                    <ul class="pagination font-style white-text">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Pagination -->
+                </nav>
                 <div id="foo"></div>
 
                 <!--Button should reset page back to Home/Beginning of page -->
-                <a class="btn btn-success btn-xl js-scroll-trigger font-style" href="#home">All Set</a>
+                <a class="btn btn-success btn-xl js-scroll-trigger waves-effect waves-light buttonFont"
+                    href="#navBar">All
+                    Set</a>
                 <!--Button should reset page back to Home/Beginning of page -->
 
             </div>
@@ -353,6 +365,11 @@
     </div>
     <!-- Card -->
 
+    <!-- Footer -->
+    <footer class="page-footer font-small transparent">
+        <div class="footer text-center py-3">Napoleon B: “Veni, vidi, vici. I came, I saw, I conquered”</div>
+    </footer>
+    <!-- Footer -->
 
 
 

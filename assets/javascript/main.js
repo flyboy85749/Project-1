@@ -36,7 +36,7 @@ function generalFoodInfo() {
 
                 // pulls the id of the food above
                 var moreInfoButt = $("<td>");
-                var buttonInfo = $(`<button type="button" class="btn btn-primary moreInfoButt" data-toggle="modal" data-target="#infoModal"
+                var buttonInfo = $(`<button type="button" class="btn btn-success btn-sm moreInfoFont moreInfoButt" data-toggle="modal" data-target="#infoModal"
         data-whatever="@mdo">More Info</button> `)
                 buttonInfo.attr("data-food", response.hits[i]._id);
                 buttonInfo.attr("data-brand", response.hits[i].fields.brand_id);
